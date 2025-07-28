@@ -81,21 +81,12 @@ Endpoint para verificação de saúde da aplicação.
 
 ## Deploy no Google Cloud Run
 
-1. Construa a imagem Docker:
+1. Rota:
    ```
-   docker build -t gcr.io/[PROJECT_ID]/cep-temp-api .
-   ```
-
-2. Faça o push da imagem para o Google Container Registry:
-   ```
-   docker push gcr.io/[PROJECT_ID]/cep-temp-api
+   https://go-lab-cap-temp-437097252417.us-central1.run.app/
    ```
 
-3. Deploy no Cloud Run:
+2. Exemplo usando query param para obter a temperatura
    ```
-   gcloud run deploy cep-temp-api \
-     --image gcr.io/[PROJECT_ID]/cep-temp-api \
-     --platform managed \
-     --allow-unauthenticated \
-     --set-env-vars WEATHER_API_KEY=sua_chave_api
+   https://go-lab-cap-temp-437097252417.us-central1.run.app/temperature?cep=06213070
    ```
